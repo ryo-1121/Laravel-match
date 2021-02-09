@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="topPage">
-  <nav class="nav">
+  <!-- <nav class="nav">
     <ul>
       <li class="personIcon">
         <a href="/users/show/{{Auth::id()}}"><i class="fas fa-user fa-2x"></i></a></li>
@@ -12,13 +12,15 @@
       <li class="messageIcon"><a href="{{route('matching')}}"><i class="fas fa-2x fa-comments"></a></i></li>
       
     </ul>
-  </nav>
+  </nav> -->
   <div id="tinderslide">
     <ul>
         @foreach($users as $user)
         <li data-user_id="{{ $user->id }}">
-          <div class="userName">{{ $user->name }}</div>
-          <img src="/storage/images/{{ $user->img_name}}">
+          <a href="/users/profile/{{$user->id}}">
+          <div class="userName" style="background-color: #FFF9B1; border-radius: 6px; padding: 3px;">{{ $user->name }}</div>
+          </a>
+          <img src="/storage/images/{{ $user->img_name1}}">
           <div class="like"></div>
           <div class="dislike"></div>
         </li>

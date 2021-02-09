@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnToUsersTable extends Migration
+class AddaColumnToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,8 @@ class AddColumnToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('self_introduction', 500)->nullable();
-            $table->tinyInteger('sex')->default(0);
-            $table->string('img_name1')->default('');
+            $table->string('img_name2')->default('');
+            $table->string('img_name3')->default('');
         });
     }
 

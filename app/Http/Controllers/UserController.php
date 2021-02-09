@@ -7,7 +7,8 @@ use App\User;
 use Intervention\Image\Facades\Image;
 use App\Services\CheckExtensionServices;
 use App\Services\FileUploadServices;
-use App\Http\Requests\ProfileRequest; 
+use App\Services\FileSaveServices;
+use App\Http\Requests\ProfileRequest;
 
 class UserController extends Controller
 {
@@ -30,17 +31,12 @@ class UserController extends Controller
 
         $user = User::findorFail($id);
 
-        if (!is_null($request['img_name'])) {
-            $imageFile = $request['img_name'];
-
-            $list = FileUploadServices::fileUpload($imageFile);
-            list($extension, $fileNameToStore, $fileData) = $list;
-
-            $data_url = CheckExtensionServices::checkExtension($fileData, $extension);
-            $image = Image::make($data_url);
-            $image->resize(400, 400)->save(storage_path() . '/app/public/images/' . $fileNameToStore);
-
-            $user->img_name = $fileNameToStore;
+        for ($i = 1; $i <= 3; $i++) {
+            $img_name = 'img_name'.$i;
+            // dd($request['img_name'.$i],$request);
+            if (!is_null($request[$img_name])) {
+                FileSaveServices::fileSave($request[$img_name], $user, $i);
+            }
         }
 
         $user->name = $request->name;
@@ -51,5 +47,11 @@ class UserController extends Controller
         $user->save();
 
         return redirect('home');
+    }
+    public function profile($id)
+    {
+        $user = User::findorFail($id);
+
+        return view('users.profile', compact('user'));
     }
 }

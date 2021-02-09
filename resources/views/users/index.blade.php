@@ -3,10 +3,10 @@
 @section('content')
 
 <div class="matchingPage">
-  <header class="header">
+  <!-- <header class="header">
     <i class="fas fa-comments fa-3x"></i>
     <div class="header_logo"><a href="{{route('home')}}"><img src="/storage/images/techpit-match-icon.png"></a></div>
-  </header>
+  </header> -->
   <div class="container">
     <div class="mt-5">
       <div class="matchingNum">{{ $match_users_count }}人とマッチングしています</div>
@@ -14,7 +14,7 @@
       <div class="matchingList">
         @foreach( $matching_users as $user)
         <div class="matchingPerson">
-          <div class="matchingPerson_img"><img src="/storage/images/{{ $user->img_name}}"></div>
+          <div class="matchingPerson_img"><img src="/storage/images/{{ $user->img_name1}}"></div>
           <div class="matchingPerson_name">{{ $user->name }}</div>
 
           <form method="POST" action="{{ route('chat.show') }}">

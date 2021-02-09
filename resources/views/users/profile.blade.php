@@ -19,7 +19,7 @@
       <div class='userInfo_selfIntroduction'>{{ $user -> self_introduction }}</div>
     </div>
     
-      <div class='userAction'>
+      <!-- <div class='userAction'>
         <div class="userAction_edit userAction_common">
           <a href="/users/edit/{{$user->id}}"><i class="fas fa-edit fa-2x"></i></a>
           <span>情報を編集</span>
@@ -32,7 +32,7 @@
               @csrf
           </form>
         </div>
-      </div>
+      </div> -->
     
   </div>
 </div>
