@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.no-login')
 
 @section('content')
 <div class="loginPage">

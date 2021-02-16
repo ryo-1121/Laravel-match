@@ -74,7 +74,7 @@ class RegisterController extends Controller
     {
         // ---ここから追加---
         //引数 $data から name='img_name'を取得(アップロードするファイル情報)
-        $imageFile = $data['img_name'];
+        $imageFile = $data['img_name1'];
 
         $list = FileUploadServices::fileUpload($imageFile); //変更
 
@@ -96,7 +96,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'self_introduction' => $data['self_introduction'],
             'sex' => $data['sex'],
-            'img_name' => $fileNameToStore,
+            'img_name1' => $fileNameToStore,
         ]);
     }
 }

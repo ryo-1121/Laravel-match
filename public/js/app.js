@@ -43462,8 +43462,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
-  key: "0bb02aa3bcb3663d67a4",
-  cluster: "ap3",
+  key: "",
+  cluster: "mt1",
   encrypted: true
 });
 
@@ -44281,7 +44281,7 @@ function checkUserNum() {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$(document).on("change", "#file_photo", function (e) {
+$(document).on("change", "#file_photo1", function (e) {
   var reader;
 
   if (e.target.files.length) {
@@ -44289,8 +44289,42 @@ $(document).on("change", "#file_photo", function (e) {
 
     reader.onload = function (e) {
       var userThumbnail;
-      userThumbnail = document.getElementById('thumbnail');
-      $("#userImgPreview").addClass("is-active");
+      userThumbnail = document.getElementById('thumbnail1');
+      $("#userImgPreview1").addClass("is-active");
+      userThumbnail.setAttribute('src', e.target.result);
+    };
+
+    return reader.readAsDataURL(e.target.files[0]);
+  }
+});
+
+$(document).on("change", "#file_photo2", function (e) {
+  var reader;
+
+  if (e.target.files.length) {
+    reader = new FileReader();
+
+    reader.onload = function (e) {
+      var userThumbnail;
+      userThumbnail = document.getElementById('thumbnail2');
+      $("#userImgPreview2").addClass("is-active");
+      userThumbnail.setAttribute('src', e.target.result);
+    };
+
+    return reader.readAsDataURL(e.target.files[0]);
+  }
+});
+
+$(document).on("change", "#file_photo3", function (e) {
+  var reader;
+
+  if (e.target.files.length) {
+    reader = new FileReader();
+
+    reader.onload = function (e) {
+      var userThumbnail;
+      userThumbnail = document.getElementById('thumbnail3');
+      $("#userImgPreview3").addClass("is-active");
       userThumbnail.setAttribute('src', e.target.result);
     };
 
@@ -44318,8 +44352,8 @@ $(document).on("change", "#file_photo", function (e) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Applications/MAMP/htdocs/yamaya-match/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/yamaya-match/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/Laravel-match/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/Laravel-match/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

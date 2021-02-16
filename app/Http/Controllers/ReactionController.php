@@ -39,6 +39,11 @@ class ReactionController extends Controller
             $reaction->status = $status;
 
             $reaction->save();
+        } else {
+            Reaction::where([
+                ['to_user_id', $to_user_id],
+                ['from_user_id', $from_user_id]
+            ])->update(['status' => $status]);
         }
     }
 }
